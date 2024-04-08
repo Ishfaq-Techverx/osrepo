@@ -32,6 +32,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const isMobile = isMobileAgent(request.headers.get("user-agent"))
   const postsPerPage = isMobile ? TOOLS_PER_PAGE / 3 : TOOLS_PER_PAGE
   const { take, skip, query, order } = getPageParams<Params>(request, postsPerPage)
+
   const search = getSearchQuery(query)
 
   let orderBy: Prisma.ToolFindManyArgs["orderBy"]
