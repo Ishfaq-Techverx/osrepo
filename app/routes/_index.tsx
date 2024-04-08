@@ -91,12 +91,12 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const toolCount = Promise.resolve().then(() => {
     return prisma.tool.count({ where })
   })
+
   return defer({ tools, toolCount, postsPerPage }, JSON_HEADERS)
 }
 
 export default function Index() {
   const { tools, toolCount, postsPerPage } = useLoaderData<typeof loader>()
-  console.log("datam::", tools)
 
   return (
     <>
@@ -144,9 +144,9 @@ export default function Index() {
           <Await resolve={tools}>
             {(tools) => (
               <>
-                {tools.map((tool) => {
-                  return <ToolRecord key={tool.id} tool={tool} />
-                })}
+                {tools.map((tool) => (
+                  <ToolRecord key={tool.id} tool={tool} />
+                ))}
 
                 {!tools.length && <p>No tools found.</p>}
               </>

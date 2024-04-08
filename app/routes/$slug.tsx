@@ -18,7 +18,6 @@ import { Button } from "~/components/Button"
 import { Prose } from "~/components/Prose"
 import { RepositoryDetails } from "~/components/RepositoryDetails"
 import { posthog } from "posthog-js"
-import { getRepoOwnerAndName } from "~/utils/github"
 
 export const handle = {
   breadcrumb: (data?: { tool: ToolOne }) => {
@@ -49,11 +48,7 @@ export const loader = async ({ params: { slug } }: LoaderFunctionArgs) => {
     })
 
     const meta = {
-      title: `${tool.name}: Open Source Alternative ${
-        tool.alternatives.length
-          ? `to ${tool.alternatives.map(({ alternative }) => alternative?.name).join(", ")}`
-          : ""
-      }`,
+      title: `${tool.name}: Open Source Alternative ${tool.alternatives.length ? `to ${tool.alternatives.map(({ alternative }) => alternative?.name).join(", ")}` : ""}`,
     }
 
     return json({ meta, tool }, JSON_HEADERS)
@@ -64,7 +59,7 @@ export const loader = async ({ params: { slug } }: LoaderFunctionArgs) => {
 
 export default function ToolsPage() {
   const { tool } = useLoaderData<typeof loader>()
-  const repo = getRepoOwnerAndName(tool.repository)
+  // const repo = getRepoOwnerAndName(tool.repository)
 
   return (
     <div className="flex flex-col gap-12" style={{ viewTransitionName: "tool" }}>
@@ -160,13 +155,13 @@ export default function ToolsPage() {
         <div className="sticky top-14 max-md:hidden">
           <RepositoryDetails tool={tool} />
 
-          {repo && (
+          {/* {repo && (
             <img
               src={`https://api.star-history.com/svg?repos=${repo?.owner}/${repo?.name}&type=Date`}
               alt="Star History"
               loading="lazy"
             />
-          )}
+          )} */}
         </div>
       </div>
 

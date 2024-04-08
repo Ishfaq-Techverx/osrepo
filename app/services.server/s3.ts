@@ -9,7 +9,7 @@ const cfg: S3ClientConfig = {
     accessKeyId: process.env.S3_ACCESS_KEY!,
     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
   },
-  endpoint: process.env.S3_ENDPOINT ?? "http://localhost:4566",
+  // endpoint: process.env.S3_ENDPOINT ?? "http://localhost:4566",
   forcePathStyle: true,
 }
 

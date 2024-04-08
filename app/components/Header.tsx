@@ -48,7 +48,9 @@ export const Header = ({ className, ...props }: HTMLAttributes<HTMLElement>) => 
       </button>
 
       <Breadcrumbs className="mr-auto" />
+
       <Navigation className="max-lg:hidden" />
+
       <Series size="sm">
         <ThemeSwitcher />
 
@@ -86,6 +88,7 @@ export const Header = ({ className, ...props }: HTMLAttributes<HTMLElement>) => 
           </Link>
         </Button>
       </Series>
+
       {isNavOpen && <Navigation className="mt-2 w-full lg:hidden" showAllLinks />}
     </div>
   )
