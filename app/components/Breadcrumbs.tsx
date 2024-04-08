@@ -44,6 +44,7 @@ export const Breadcrumbs = ({ className, ...props }: HTMLAttributes<HTMLElement>
   const matches = (useMatches() as unknown as BreadcrumbMatch[]).filter(
     ({ handle }) => handle?.breadcrumb
   )
+
   return (
     <ol
       itemScope
