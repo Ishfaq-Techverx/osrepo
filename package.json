@@ -23,7 +23,7 @@
     "@curiousleaf/utils": "^1.0.22",
     "@epic-web/remember": "^1.0.2",
     "@octokit/graphql": "^8.0.1",
-    "@prisma/client": "^5.11.0",
+    "@prisma/client": "^5.12.1",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-slot": "^1.0.2",
     "@remix-run/node": "^2.8.1",
@@ -79,7 +79,9 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "trustedDependencies": ["supabase"],
+  "trustedDependencies": [
+    "supabase"
+  ],
   "prettier": {
     "semi": false,
     "singleQuote": false,

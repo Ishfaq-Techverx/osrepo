@@ -25,7 +25,8 @@
   "crons": [
     {
       "path": "/api/cron",
-      "schedule": "0 0 * * *"
+      "schedule": "18 30 * * *"
     }
-  ]
+  ],
+  "regions": ["syd1"]
 }
