@@ -149,7 +149,7 @@ export default function Index() {
                   <ToolRecord key={tool.id} tool={tool} />
                 ))}
 
-                {!tools.length && <p>No tools found.</p>}
+                {!tools.length ? <p>No tools found.</p> : null}
               </>
             )}
           </Await>
